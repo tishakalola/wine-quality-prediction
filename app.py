@@ -26,7 +26,7 @@ if "authenticated" not in st.session_state:
 page = st.sidebar.radio("Navigation", ["Login", "Wine Quality Predictor", "About Website"])
 
 def login_page():
-    st.image("wbg.jpeg", use_column_width=True)
+    st.image("wbg.jpeg", use_container_width=True)
     st.markdown("""<h1 style='text-align: center;'>🍷 Welcome to Wine Quality Predictor</h1>""", unsafe_allow_html=True)
     st.subheader("Login / Sign Up")
     
@@ -100,7 +100,7 @@ def about_page():
     - Reset Field Functionality
     - Fully Responsive Design
     """)
-    st.image("wbg.jpeg", use_column_width=True)
+    st.image("wbg.jpeg", use_container_width=True)
     
 # Page Routing
 if page == "Login":
