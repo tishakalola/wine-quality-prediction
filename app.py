@@ -16,9 +16,10 @@ def login():
         if username == "admin" and password == "password123":  # Dummy credentials
             st.session_state.logged_in = True
             st.success("Login successful! Redirecting...")
-            st.experimental_rerun()  # Refresh the page after login
+            st.rerun()  # ✅ Correct function
         else:
             st.error("Invalid credentials, please try again!")
+
 
 def predictor_page():
     """Main Wine Quality Predictor Page"""
