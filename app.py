@@ -16,10 +16,9 @@ def login():
         if username == "admin" and password == "password123":  # Dummy credentials
             st.session_state.logged_in = True
             st.success("Login successful! Redirecting...")
-            st.rerun()  # ✅ Correct function
+            st.experimental_rerun()  # Refresh the page after login
         else:
             st.error("Invalid credentials, please try again!")
-
 
 def predictor_page():
     """Main Wine Quality Predictor Page"""
@@ -59,7 +58,7 @@ def predictor_page():
         }
 
         # Send data to backend for prediction (assuming you have a backend API)
-        response = requests.post("http://localhost:5000/predict", json={"features": list(input_data.values())})
+        response = requests.post("https://wine-qualityprediction.streamlit.app/predict", json={"features": list(input_data.values())})
         if response.status_code == 200:
             prediction = response.json()["prediction"]
             st.success(f"Predicted Quality: {prediction}")
